@@ -5,14 +5,14 @@
 }
 
 .header {
-    background-color: #222222;
-    color: #f2f2f2;
+    background-color: #f2f2f2;
+    color: #424242;
 }
 
 .headerContainer {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-right: 12px;
     margin-left: 12px;
 }
@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     margin-right: 40px;
-    color: #f2f2f2;
+    color: #424242;
     text-decoration: none;
 }
 
@@ -30,7 +30,6 @@
 }
 
 .headerTitle {
-    margin-left: 12px;
     font-weight: 600;
 }
 
@@ -55,7 +54,7 @@
 }
 
 .headerNavPageLinkActive {
-    color: #f2f2f2;
+    color: #424242;
     text-decoration: none;
 }
 
@@ -74,5 +73,5 @@
 }
 
 .githubLogo {
-    height: 20px;
+    height: 60px;
 }

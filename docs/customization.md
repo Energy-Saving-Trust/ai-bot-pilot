@@ -4,6 +4,7 @@ This guide provides more details for customizing the Chat App.
 
 - [Using your own data](#using-your-own-data)
 - [Customizing the UI](#customizing-the-ui)
+- [Customizing the Embedding Model](#customizing-the-embedding-model)
 - [Customizing the backend](#customizing-the-backend)
   - [Chat/Ask approaches](#chatask-approaches)
 - [Improving answer quality](#improving-answer-quality)
@@ -25,6 +26,11 @@ The frontend is built using [React](https://reactjs.org/) and [Fluent UI compone
 - `app/frontend/src/pages/chat/Chat.tsx`: To change the large heading
 - `app/frontend/src/components/Example/ExampleList.tsx`: To change the example questions
 
+## Customizing the Embedding Model
+
+The OpenAI embedding model is defined in the [embeddings.py](/scripts/prepdocslib/embeddings.py) script.
+Search for the model to identify all locations.
+
 ## Customizing the backend
 
 The backend is built using [Quart](https://quart.palletsprojects.com/), a Python framework for asynchronous web applications. The backend code is stored in the `app/backend` folder. The frontend and backend communicate using the [AI Chat App HTTP Protocol](https://github.com/Azure-Samples/ai-chat-app-protocol).
@@ -39,7 +45,7 @@ The chat tab uses the approach programmed in [chatreadretrieveread.py](https://g
 
 1. It calls the OpenAI ChatCompletion API (with a temperature of 0) to turn the user question into a good search query.
 2. It queries Azure AI Search for search results for that query (optionally using the vector embeddings for that query).
-3. It then combines the search results and original user question, and calls the OpenAI ChatCompletion API (with a temperature of 0.7) to answer the question based on the sources. It includes the last 4K of message history as well (or however many tokens are allowed by the deployed model).
+3. It then combines the search results and original user question, and calls the OpenAI ChatCompletion API (with a temperature of 0.7) to answer the question based on the sources. The temperature can be changed at the end of code under chat_coroutine. It includes the last 4K of message history as well (or however many tokens are allowed by the deployed model).
 
 The `system_message_chat_conversation` variable is currently tailored to the sample data since it starts with "Assistant helps the company employees with their healthcare plan questions, and questions about the employee handbook." Change that to match your data.
 

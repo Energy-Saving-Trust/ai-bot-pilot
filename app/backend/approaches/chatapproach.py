@@ -21,18 +21,18 @@ class ChatApproach(Approach, ABC):
     ASSISTANT = "assistant"
 
     query_prompt_few_shots = [
-        {"role": USER, "content": "How did crypto do last year?"},
-        {"role": ASSISTANT, "content": "Summarize Cryptocurrency Market Dynamics from last year"},
-        {"role": USER, "content": "What are my health plans?"},
-        {"role": ASSISTANT, "content": "Show available health plans"},
+        {"role": USER, "content": "What are the best options for exterior shading?"},
+        {"role": ASSISTANT, "content": "List options for exterior shading and highlight the top three and why they are the best."},
+        {"role": USER, "content": "What is the best way to ensure high efficiency from heat pumps?"},
+        {"role": ASSISTANT, "content": "Outline the ways to ensure high efficiency from heat pumps, distiguishing between end user and building owner."},
     ]
     NO_RESPONSE = "0"
 
     follow_up_questions_prompt_content = """Generate 3 very brief follow-up questions that the user would likely ask next.
     Enclose the follow-up questions in double angle brackets. Example:
-    <<Are there exclusions for prescriptions?>>
-    <<Which pharmacies can be ordered from?>>
-    <<What is the limit for over-the-counter medication?>>
+    <<Are there any cost differences between these exterior shading options?>>
+    <<How can I ensure that the retrofit improvement measures are moisture open where needed?>>
+    <<How do the exemplar targets compare to standard energy efficiency goals?>>
     Do no repeat questions that have already been asked.
     Make sure the last question ends with ">>".
     """
@@ -43,7 +43,7 @@ class ChatApproach(Approach, ABC):
     Do not include cited source filenames and document names e.g info.txt or doc.pdf in the search query terms.
     Do not include any text inside [] or <<>> in the search query terms.
     Do not include any special characters like '+'.
-    If the question is not in English, translate the question to English before generating the search query.
+    If the question is not in English, translate the question to English before generating the search query and return the answer in the language of the question.
     If you cannot generate a search query, return just the number 0.
     """
 
