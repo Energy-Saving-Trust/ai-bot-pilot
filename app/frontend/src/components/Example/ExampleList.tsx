@@ -3,9 +3,9 @@ import { Example } from "./Example";
 import styles from "./Example.module.css";
 
 const DEFAULT_EXAMPLES: string[] = [
-    "What is the best way to ensure high efficiency from heat pumps?",
-    "What are the best options for exterior shading?",
-    "How to promote energy efficiency measures to my tenants?"
+    "Which risk path would a listed building be classed at?",
+    "What does an EPC rating of C mean?",
+    "What are the main aims of retrofit?"
 ];
 
 const GPT4V_EXAMPLES: string[] = [

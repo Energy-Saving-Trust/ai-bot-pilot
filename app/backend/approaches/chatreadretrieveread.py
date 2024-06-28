@@ -52,7 +52,7 @@ class ChatReadRetrieveReadApproach(ChatApproach):
 
     @property
     def system_message_chat_conversation(self):
-        return """Assistant helps the Housing Association staff with their energy efficiency optimisation questions, the questions about the technical background of suggested measures. Be brief in your answers.
+        return """Assistant helps the Energy advisors with their questions about the EPC (Energy Performance Certificate) and retrofit processes and measures.
         Answer ONLY with the facts listed in the list of sources below. If there isn't enough information below, say you don't know. Do not generate answers that don't use the sources below. If asking a clarifying question to the user would help, ask the question.
         If the question or instruction is about a topic unrelated to energy efficiency, energy saving, building specification etc., say that you don't know.
         For tabular information return it as an html table. Do not return markdown format. If the question is not in English, answer in the language used in the question.

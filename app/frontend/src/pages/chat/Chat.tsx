@@ -280,8 +280,8 @@ const Chat = () => {
                     {!lastQuestionRef.current ? (
                         <div className={styles.chatEmptyState}>
                             <SparkleFilled fontSize={"120px"} primaryFill={"rgba(115, 118, 225, 1)"} aria-hidden="true" aria-label="Chat logo" />
-                            <h2 className={styles.chatEmptyStateTitle}>AI Chat</h2>
-                            <div className={styles.chatEmptyStateSubtitle}>Welsh Zero Carbon Hwb</div>
+                            <h2 className={styles.chatEmptyStateTitle}>EPC & Retrofit AI Assistant</h2>
+                            
                             <ExampleList onExampleClicked={onExampleClicked} useGPT4V={useGPT4V} />
                         </div>
                     ) : (
